@@ -13,7 +13,7 @@ class ProductView extends StatelessWidget {
         return Scaffold(
           body: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 45),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +47,24 @@ class ProductView extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 10),
-                    Image.asset("assets/images/image.png"),
+                      Center(
+      child: Container(
+        height: 250,
+        width: 330,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(image: AssetImage("assets/images/detail.png"),fit: BoxFit.fill)
+        ),
+        // child: Image.asset(
+        //   "assets/images/detail.png",
+        //   width: 200,
+        //   height: 200,
+        // ),
+      ),
+    ),
+
+
+                    // Center(child: Image.asset("assets/images/detail.png")),
                     SizedBox(height: 10),
                 
                     //==================================
@@ -128,7 +145,21 @@ class ProductView extends StatelessWidget {
                     Text("Gallery",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 15),),
                     SizedBox(height: 10,),
                     Image.asset("assets/images/detailimage2.png"),
-                    SizedBox(height: 20,),
+                    // SizedBox(height: 20,),
+                  
+
+
+                  ],
+                ),
+              ),
+            ),
+          ),
+          bottomNavigationBar: Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            height: 80,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                     Text("Prize",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 15),),                
                     Row(
                       children: [
@@ -151,9 +182,8 @@ class ProductView extends StatelessWidget {
                       ],
                     )
                 
-                  ],
-                ),
-              ),
+            
+              ],
             ),
           ),
         );
